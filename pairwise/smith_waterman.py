@@ -1,8 +1,8 @@
 # !/usr/bin/python
 
-# Global Alignment
-# Needleman-Wunsch Algorithm
-# Biological Sequence Analysis - Page 19
+# Local Alignment
+# Smith-Waterman Algorithm
+# Biological Sequence Analysis - Page 22
 
 import sys
 
@@ -33,34 +33,23 @@ def main(seqs, d):
 def build_alignment_matrix(x, y, d):
 
     # Initialize a matrix with all 0 values
-    mtx = np.array([[[0, 0, 0]] * len(x)] * len(y))
+    mtx = np.array([[[0, -1, -1]] * len(x)] * len(y))
 
-    # Initialize the initial condition
-    mtx[0][0] = (0, -1, -1)
-
-    # Let every value in the top row be equal to the gap penalty (theoretical max value)
-    for i in range(1, len(x)):
-        mtx[0][i] = (-i * d, i - 1, 0)
-
-    # Let every value in the left column be equal to the gap penalty (theoretical max value)
-    for j in range(1, len(y)):
-        mtx[j][0] = (-j * d, 0, j - 1)
-
-    # For the rest of the cells, use the recursive function
     # We choose either a gap or a pairing
     # Pairings log-odds ratios are taken from the substitution matrix (Blosum50)
     # Gap scores are chosen using the gap-odds penalty
+    # We only take the max score if it is greater than 0
     for n in range(1, len(x)):
         for m in range(1, len(y)):
             pair = mtx[m-1][n-1][0] + (MatrixInfo.blosum50[(x[n], y[m])] if MatrixInfo.blosum50.keys().__contains__((x[n], y[m])) else MatrixInfo.blosum50[(y[m], x[n])])
             gap1 = mtx[m][n-1][0] - d
             gap2 = mtx[m-1][n][0] - d
-            maxScore = max(pair, gap1, gap2)
+            maxScore = max(pair, gap1, gap2, 0)
             if maxScore == pair:
                 mtx[m][n] = (maxScore, n - 1, m - 1)
             elif maxScore == gap1:
                 mtx[m][n] = (maxScore, n - 1, m)
-            else:
+            elif maxScore == gap2:
                 mtx[m][n] = (maxScore, n, m - 1)
 
     return mtx
@@ -68,7 +57,7 @@ def build_alignment_matrix(x, y, d):
 def traceback(x, y, mtx):
 
     aligns = [ "", "" ]
-    (n, m) = (len(mtx[0]) - 1, len(mtx) - 1)
+    (n, m) = find_max(mtx)
     while (n, m) != (-1, -1):
 
         cell = mtx[m][n]
@@ -88,6 +77,17 @@ def traceback(x, y, mtx):
         m = cell[2]
 
     return aligns
+
+def find_max(mtx):
+
+    maxVal = mtx[0][0][0]
+    (x, y) = (0, 0)
+    for n in range(len(mtx[0])):
+        for m in range(len(mtx)):
+            if mtx[m][n][0] > maxVal:
+                (x, y) = (n, m)
+                maxVal = mtx[m][n][0]
+    return (x, y)
 
 if __name__ == "__main__":
 
