@@ -11,6 +11,8 @@ import numpy as np
 from Bio import SeqIO
 from Bio.SubsMat import MatrixInfo
 
+import common as cmn
+
 def main(seqs, d):
 
     with open(seqs[0], "rU") as handle:
@@ -27,8 +29,12 @@ def main(seqs, d):
     # Get alignments by tracing back through matrix
     alignment = traceback(seq1, seq2, mtx)
 
-    print(alignment[0])
-    print(alignment[1])
+    aligns = cmn.color_alignments(alignment)
+
+    print(aligns[0])
+    print(aligns[1])
+
+    print("\033[0;30;0m")
 
 def build_alignment_matrix(x, y, d):
 
