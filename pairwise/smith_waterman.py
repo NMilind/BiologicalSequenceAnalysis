@@ -29,12 +29,7 @@ def main(seqs, d):
     # Get alignments by tracing back through matrix
     alignment = traceback(seq1, seq2, mtx)
 
-    aligns = cmn.color_alignments(alignment)
-
-    print(aligns[0])
-    print(aligns[1])
-
-    print("\033[0;30;0m")
+    cmn.color_print_alignments(alignment, 150)
 
 def build_alignment_matrix(x, y, d):
 

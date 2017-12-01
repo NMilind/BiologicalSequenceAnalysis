@@ -30,12 +30,7 @@ def main(seqs, d):
     alignment = traceback(seq1, seq2, mtx)
 
     # Color aligns according to matches
-    aligns = cmn.color_alignments(alignment)
-
-    print(aligns[0])
-    print(aligns[1])
-
-    print("\033[0;30;0m")
+    cmn.color_print_alignments(alignment, 150)
 
 def build_alignment_matrix(x, y, d):
 

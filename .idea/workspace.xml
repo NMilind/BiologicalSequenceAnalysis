@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="034a19a4-5157-41b3-a484-9fc8a0c0c669" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pairwise/common.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pairwise/fasta/homo_sapiens_leukotriene_c4_synthase.fasta" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pairwise/fasta/hemaglutinin_durango.fasta" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pairwise/fasta/hemaglutinin_jakarta.fasta" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pairwise/common.py" afterPath="$PROJECT_DIR$/pairwise/common.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pairwise/needleman_wunsch.py" afterPath="$PROJECT_DIR$/pairwise/needleman_wunsch.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pairwise/smith_waterman.py" afterPath="$PROJECT_DIR$/pairwise/smith_waterman.py" />
     </list>
@@ -18,34 +19,66 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="needleman_wunsch.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="needleman_wunsch.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pairwise/needleman_wunsch.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="18" lean-forward="false" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
+            <state relative-caret-position="481">
+              <caret line="92" column="0" lean-forward="true" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
               <folding>
                 <element signature="e#110#120#0" expanded="true" />
-                <element signature="e#246#830#0" expanded="false" />
-                <element signature="e#874#2206#0" expanded="false" />
-                <element signature="e#2239#2851#0" expanded="false" />
-                <element signature="e#2885#3217#0" expanded="false" />
+                <element signature="e#806#2138#0" expanded="false" />
+                <element signature="e#2171#2783#0" expanded="false" />
+                <element signature="e#2817#3149#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="smith_waterman.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="smith_waterman.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pairwise/smith_waterman.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="31" column="17" lean-forward="false" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="17" />
+            <state relative-caret-position="297">
+              <caret line="31" column="45" lean-forward="false" selection-start-line="31" selection-start-column="45" selection-end-line="31" selection-end-column="45" />
               <folding>
                 <element signature="e#107#117#0" expanded="true" />
-                <element signature="e#831#1790#0" expanded="false" />
-                <element signature="e#1823#2417#0" expanded="false" />
-                <element signature="e#2443#2677#0" expanded="false" />
-                <element signature="e#2711#3043#0" expanded="false" />
+                <element signature="e#763#1722#0" expanded="false" />
+                <element signature="e#1755#2349#0" expanded="false" />
+                <element signature="e#2375#2609#0" expanded="false" />
+                <element signature="e#2643#2975#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="common.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pairwise/common.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="432">
+              <caret line="73" column="25" lean-forward="false" selection-start-line="73" selection-start-column="25" selection-end-line="73" selection-end-column="25" />
+              <folding>
+                <element signature="e#94#924#0" expanded="false" />
+                <element signature="e#1021#1136#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="hemaglutinin_jakarta.fasta" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pairwise/fasta/hemaglutinin_jakarta.fasta">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="9" column="6" lean-forward="false" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="hemaglutinin_durango.fasta" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pairwise/fasta/hemaglutinin_durango.fasta">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="46" lean-forward="true" selection-start-line="0" selection-start-column="46" selection-end-line="0" selection-end-column="46" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -71,9 +104,11 @@
         <option value="$PROJECT_DIR$/pairwise/fasta/test_prot_1.fasta" />
         <option value="$PROJECT_DIR$/pairwise/fasta/test_prot_2.fasta" />
         <option value="$PROJECT_DIR$/pairwise/fasta/homo_sapiens_leukotriene_c4_synthase.fasta" />
+        <option value="$PROJECT_DIR$/pairwise/fasta/hemaglutinin_jakarta.fasta" />
+        <option value="$PROJECT_DIR$/pairwise/fasta/hemaglutinin_durango.fasta" />
         <option value="$PROJECT_DIR$/pairwise/common.py" />
-        <option value="$PROJECT_DIR$/pairwise/needleman_wunsch.py" />
         <option value="$PROJECT_DIR$/pairwise/smith_waterman.py" />
+        <option value="$PROJECT_DIR$/pairwise/needleman_wunsch.py" />
       </list>
     </option>
   </component>
@@ -351,7 +386,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="948" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1935287" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32943925" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -361,7 +395,7 @@
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32943925" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32943925" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32943925" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -393,10 +427,9 @@
           <caret line="32" column="16" lean-forward="true" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="16" />
           <folding>
             <element signature="e#110#120#0" expanded="true" />
-            <element signature="e#246#830#0" expanded="false" />
-            <element signature="e#874#2206#0" expanded="false" />
-            <element signature="e#2239#2851#0" expanded="false" />
-            <element signature="e#2885#3217#0" expanded="false" />
+            <element signature="e#806#2138#0" expanded="false" />
+            <element signature="e#2171#2783#0" expanded="false" />
+            <element signature="e#2817#3149#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -439,10 +472,10 @@
           <caret line="78" column="17" lean-forward="true" selection-start-line="78" selection-start-column="17" selection-end-line="78" selection-end-column="17" />
           <folding>
             <element signature="e#107#117#0" expanded="true" />
-            <element signature="e#831#1790#0" expanded="false" />
-            <element signature="e#1823#2417#0" expanded="false" />
-            <element signature="e#2443#2677#0" expanded="false" />
-            <element signature="e#2711#3043#0" expanded="false" />
+            <element signature="e#763#1722#0" expanded="false" />
+            <element signature="e#1755#2349#0" expanded="false" />
+            <element signature="e#2375#2609#0" expanded="false" />
+            <element signature="e#2643#2975#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -453,10 +486,9 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#110#120#0" expanded="true" />
-            <element signature="e#246#830#0" expanded="false" />
-            <element signature="e#874#2206#0" expanded="false" />
-            <element signature="e#2239#2851#0" expanded="false" />
-            <element signature="e#2885#3217#0" expanded="false" />
+            <element signature="e#806#2138#0" expanded="false" />
+            <element signature="e#2171#2783#0" expanded="false" />
+            <element signature="e#2817#3149#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -510,38 +542,56 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pairwise/common.py">
+    <entry file="file://$PROJECT_DIR$/pairwise/fasta/hemaglutinin_jakarta.fasta">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="18" lean-forward="false" selection-start-line="0" selection-start-column="18" selection-end-line="0" selection-end-column="18" />
+        <state relative-caret-position="135">
+          <caret line="9" column="6" lean-forward="false" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pairwise/needleman_wunsch.py">
+    <entry file="file://$PROJECT_DIR$/pairwise/fasta/hemaglutinin_durango.fasta">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="18" lean-forward="false" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
+        <state relative-caret-position="0">
+          <caret line="0" column="46" lean-forward="true" selection-start-line="0" selection-start-column="46" selection-end-line="0" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pairwise/common.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="73" column="25" lean-forward="false" selection-start-line="73" selection-start-column="25" selection-end-line="73" selection-end-column="25" />
           <folding>
-            <element signature="e#110#120#0" expanded="true" />
-            <element signature="e#246#830#0" expanded="false" />
-            <element signature="e#874#2206#0" expanded="false" />
-            <element signature="e#2239#2851#0" expanded="false" />
-            <element signature="e#2885#3217#0" expanded="false" />
+            <element signature="e#94#924#0" expanded="false" />
+            <element signature="e#1021#1136#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pairwise/smith_waterman.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" column="17" lean-forward="false" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="17" />
+        <state relative-caret-position="297">
+          <caret line="31" column="45" lean-forward="false" selection-start-line="31" selection-start-column="45" selection-end-line="31" selection-end-column="45" />
           <folding>
             <element signature="e#107#117#0" expanded="true" />
-            <element signature="e#831#1790#0" expanded="false" />
-            <element signature="e#1823#2417#0" expanded="false" />
-            <element signature="e#2443#2677#0" expanded="false" />
-            <element signature="e#2711#3043#0" expanded="false" />
+            <element signature="e#763#1722#0" expanded="false" />
+            <element signature="e#1755#2349#0" expanded="false" />
+            <element signature="e#2375#2609#0" expanded="false" />
+            <element signature="e#2643#2975#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pairwise/needleman_wunsch.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="481">
+          <caret line="92" column="0" lean-forward="true" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
+          <folding>
+            <element signature="e#110#120#0" expanded="true" />
+            <element signature="e#806#2138#0" expanded="false" />
+            <element signature="e#2171#2783#0" expanded="false" />
+            <element signature="e#2817#3149#0" expanded="false" />
           </folding>
         </state>
       </provider>
