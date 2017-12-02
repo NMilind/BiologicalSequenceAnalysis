@@ -12,6 +12,7 @@ from Bio import SeqIO
 from Bio.SubsMat import MatrixInfo
 
 import common as cmn
+from common import BasicElement
 
 def main(seqs, d):
 
@@ -29,12 +30,12 @@ def main(seqs, d):
     # Get alignments by tracing back through matrix
     alignment = traceback(seq1, seq2, mtx)
 
-    cmn.color_print_alignments(alignment, 150)
+    cmn.color_print_alignments(seq1_record, seq2_record, alignment, 150)
 
 def build_alignment_matrix(x, y, d):
 
     # Initialize a matrix with all 0 values
-    mtx = np.array([[[0, -1, -1]] * len(x)] * len(y))
+    mtx = np.array([[BasicElement(m=0, x=-1, y=-1) for i in range(len(x))] for j in range(len(y))])
 
     # We choose either a gap or a pairing
     # Pairings log-odds ratios are taken from the substitution matrix (Blosum50)
@@ -42,16 +43,16 @@ def build_alignment_matrix(x, y, d):
     # We only take the max score if it is greater than 0
     for n in range(1, len(x)):
         for m in range(1, len(y)):
-            pair = mtx[m-1][n-1][0] + (MatrixInfo.blosum50[(x[n], y[m])] if MatrixInfo.blosum50.keys().__contains__((x[n], y[m])) else MatrixInfo.blosum50[(y[m], x[n])])
-            gap1 = mtx[m][n-1][0] - d
-            gap2 = mtx[m-1][n][0] - d
+            pair = mtx[m-1][n-1].m + (MatrixInfo.blosum50[(x[n], y[m])] if MatrixInfo.blosum50.keys().__contains__((x[n], y[m])) else MatrixInfo.blosum50[(y[m], x[n])])
+            gap1 = mtx[m][n-1].m - d
+            gap2 = mtx[m-1][n].m - d
             maxScore = max(pair, gap1, gap2, 0)
             if maxScore == pair:
-                mtx[m][n] = (maxScore, n - 1, m - 1)
+                mtx[m][n] = BasicElement(maxScore, n - 1, m - 1)
             elif maxScore == gap1:
-                mtx[m][n] = (maxScore, n - 1, m)
+                mtx[m][n] = BasicElement(maxScore, n - 1, m)
             elif maxScore == gap2:
-                mtx[m][n] = (maxScore, n, m - 1)
+                mtx[m][n] = BasicElement(maxScore, n, m - 1)
 
     return mtx
 
@@ -63,31 +64,31 @@ def traceback(x, y, mtx):
 
         cell = mtx[m][n]
         # Pair
-        if cell[1] == n - 1 and cell[2] == m - 1:
+        if cell.x == n - 1 and cell.y == m - 1:
             aligns[0] = x[n] + aligns[0]
             aligns[1] = y[m] + aligns[1]
         # Gap 1
-        if cell[1] == n - 1 and cell[2] == m:
+        if cell.x == n - 1 and cell.y == m:
             aligns[0] = x[n] + aligns[0]
             aligns[1] = "-" + aligns[1]
         # Gap 2
-        if cell[1] == n and cell[2] == m - 1:
+        if cell.x == n and cell.y == m - 1:
             aligns[0] = "-" + aligns[0]
             aligns[1] = y[m] + aligns[1]
-        n = cell[1]
-        m = cell[2]
+        n = cell.x
+        m = cell.y
 
     return aligns
 
 def find_max(mtx):
 
-    maxVal = mtx[0][0][0]
+    maxVal = mtx[0][0].m
     (x, y) = (0, 0)
     for n in range(len(mtx[0])):
         for m in range(len(mtx)):
-            if mtx[m][n][0] > maxVal:
+            if mtx[m][n].m > maxVal:
                 (x, y) = (n, m)
-                maxVal = mtx[m][n][0]
+                maxVal = mtx[m][n].m
     return (x, y)
 
 if __name__ == "__main__":

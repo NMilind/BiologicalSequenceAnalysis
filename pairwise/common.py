@@ -73,16 +73,26 @@ def color_print_alignments(seq1, seq2, alignment, n):
         print("\033[0;30;0m" + seq2.id + "\t" + str(i) + "\t" + aligns[1])
         print("\033[0;30;0m")
 
-class AffineElement(object):
+# An element for the score matrix of the needleman-wunsch algorithm
+# Also used in the smith-waterman algorithm
+class BasicElement(object):
+    def __init__(self, m=0, x=0, y=0):
+        self.m = m
+        self.x = x
+        self.y = y
+    def __str__(self):
+        return "[M=%s] -> (%s, %s)" % (self.m, self.x, self.y)
+    def __repr__(self):
+        return self.__str__()
 
+# An element for the score matrix of the affine needleman-wunsch algorithm
+class AffineElement(object):
     def __init__(self, m=0, i=0, x=0, y=0):
         self.m = m
         self.i = i
         self.x = x
         self.y = y
-
     def __str__(self):
         return "[M=%s, I=%s] -> (%s, %s)" % (self.m, self.i, self.x, self.y)
-
     def __repr__(self):
         return self.__str__()
