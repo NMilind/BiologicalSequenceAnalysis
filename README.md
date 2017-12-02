@@ -25,7 +25,7 @@ python3 smith_waterman.py --seq=fasta/homo_sapiens_hemoglobin.fasta --seq=fasta/
 This is the same implementation as the traditional Needleman-Wunsch algorithm, but uses an affine function that utilizes a gap log-odds penalty (penalty to start a gap) and a gap extension log-odds penalty (penalty to extend gap). This is slightly more accurate to account for frameshifts or multiple base pair insertions.
 
 ```
-python3 affine.py --seq=fasta/homo_sapiens_hemoglobin.fasta --seq=fasta/homo_sapiens_myoglobin.fasta --go-penalty=6 --ge-penalty=2
+python3 needleman_wunsch_affine.py --seq=fasta/homo_sapiens_hemoglobin.fasta --seq=fasta/homo_sapiens_myoglobin.fasta --go-penalty=6 --ge-penalty=2
 ```
 
 ## Citations
